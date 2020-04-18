@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: TOSHIBA
-  Date: 04/04/2020
-  Time: 22:58
+  User: Abdeslam Rehaimi
+  Date: 06/04/2020
+  Time: 21:35
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -20,8 +20,14 @@
         <h2>Lists of Utilisateur</h2>
         <hr />
 
-        <input type="button" value="Nouveau Utilisateur"
-               onclick="window.location.href='addForm'; return false;"
+        <a type="button" style="float: left;" value="Nouveau Utilisateur"
+               onclick="window.location.href='new'; return false;"
+               class="btn btn-primary" />
+
+
+
+        <input type="button" style="float: right;" value="Consultation Cours"
+               onclick="window.location.href='/listCours'; return false;"
                class="btn btn-primary" />
         <br/><br/>
         <div class="panel panel-info">

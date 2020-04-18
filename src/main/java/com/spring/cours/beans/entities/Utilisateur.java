@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 import java.io.Serializable;
 import javax.persistence.GenerationType;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -22,44 +23,51 @@ public class Utilisateur implements Serializable{
     @Size(min = 1, max = 100)
     @Basic(optional = false)
     @Column(name = "nom")
-    @NotBlank(message = "nom et obligatoire !")
+    @NotBlank(message = "Vous devez indiquer votre nom !")
     @NotNull
     private String nom;
 
     @Size(min = 1, max = 100)
     @Basic(optional = false)
     @Column(name = "prenom")
-    @NotBlank(message = "prenom et obligatoire !")
+    @NotBlank(message = "Vous devez indiquer votre prenom !")
     @NotNull
     private String prenom;
 
     @Size(min = 1, max = 100)
     @Basic(optional = false)
     @Column(name = "email")
-    @NotBlank(message = "email et obligatoire !")
+    @NotBlank(message = "Vous devez indiquer votre email !")
     @NotNull
+    @Email
     private String email;
 
-    @Size(min = 1, max = 100)
+    @Size(min = 8, max = 200)
     @Basic(optional = false)
     @Column(name = "password")
-    @NotBlank(message = "password et obligatoire !")
+    @NotBlank(message = "Password invalid !")
     @NotNull
     private String password;
 
-    @Size(min = 1, max = 100)
+    //@Size(min = 1, max = 100)
     @Basic(optional = false)
     @Column(name = "identiter")
-    @NotBlank(message = "identiter et obligatoire !")
+    @NotBlank(message = "Vous devez indique votre identiter !")
     @NotNull
     private String identiter;
 
-    @Size(min = 1, max = 100)
-    @Basic(optional = false)
+    //@Size(min = 1, max = 500)
+    //@Basic(optional = false)
     @Column(name = "image")
-    @NotBlank(message = "image et obligatoire !")
-    @NotNull
+    //@NotBlank(message = "image et obligatoire !")
+    //@NotNull
     private String image;
+
+    @Size(min = 8, max = 200)
+    @Basic(optional = false)
+    @NotBlank(message = "password et confirmation obligatoire !")
+    @NotNull
+    private String confirmpassword;
 
     @ManyToMany(mappedBy = "utilisateurList")
     private List<Cours> coursList;
@@ -106,6 +114,14 @@ public class Utilisateur implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getConfirmpassword() {
+        return confirmpassword;
+    }
+
+    public void setConfirmpassword(String confirmpassword) {
+        this.confirmpassword = confirmpassword;
     }
 
     public String getIdentiter() {
