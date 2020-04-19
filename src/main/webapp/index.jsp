@@ -16,7 +16,7 @@
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
     <style>
         h1 {
-            color: brown;
+            color: #fff70a;
         }
 
         h2 {
@@ -26,14 +26,17 @@
             width: 150px;
             border: 5px solid #48ff0c;
         }
+        input{
+            border-radius: 50px;
+        }
     </style>
 </head>
-<body>
+<body style="background-color: #000000d1;">
 
 <div class="container">
     <fieldset >
         <div style="text-align: center;">
-            <h1> <span style="color: #0000007a;">SpringMVC</span> CONF XML </h1>
+            <h1> <span style="color: #ffffff;">SpringMVC</span> CONF XML </h1>
         </div>
         <hr />
     </fieldset>
@@ -41,6 +44,7 @@
 
     <fieldset>
         <legend></legend>
+        <br><br><br><br><br>
         <div style="text-align: center;"><h1>Bienvenu</h1></div>
 
         <div style="text-align: center;">

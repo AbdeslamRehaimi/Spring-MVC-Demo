@@ -14,14 +14,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/cards.css" />" rel="stylesheet">
     <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+    <style>
+        h1 {
+            color: #fff70a;
+        }
+
+        h2 {
+            color: chocolate;
+        }
+        hr {
+            width: 150px;
+            border: 5px solid #48ff0c;
+        }
+        input{
+            border-radius: 50px;
+        }
+    </style>
 </head>
-<body>
+<body style="background-color: #4a4747;">
 <div class="container">
+    <fieldset >
+        <div style="text-align: center;">
+            <h1> <span style="color: #ffffff;">SpringMVC</span> CONF XML </h1>
+        </div>
+        <hr />
+    </fieldset>
     <div class="row">
-        <div class="col-md-12 col-sm-12">
-        <div class="col-6 offset-3 ">
+        <div class="col-md-8 col-md-offset-2">
+        <div >
+            <br><br><br><br><br>
             <div class="card">
                 <div class="card-header">Votre Identifiant</div>
                 <form:form action="authentification"  method="post" modelAttribute="user">

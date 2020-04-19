@@ -14,23 +14,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/cards.css" />" rel="stylesheet">
     <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
-<body>
+<body style="background-color: #4a4747;">
 
 <div class="container">
-    <div >
-        <a style="float: left;" class="btn btn-danger" href="list" >Returne</a>
-    </div>
-    <br><br>
 
     <div class="row">
-        <div class="col-6 offset-3 ">
+        <div class="col-md-8 col-md-offset-2">
+            <div >
+                <a style="float: left;" class="btn btn-danger" href="list" >Returne</a>
+            </div>
+            <br><br>
             <div class="card">
-                <div class="panel-heading">
-                    <div class="panel-title">Nouveau/Modifier Cours</div>
-                </div>
+                    <div class="card-header">Nouveau/Update Cours</div>
                 <form:form action="saveCour"  method="post" modelAttribute="cour">
                     <div class="card-body row">
                         <form:hidden path="ID_C" />
@@ -65,9 +64,10 @@
                             <label>Owner</label>
                             <form:select path="utilisateurList" name="module" class="form-control"  >
                                 <c:forEach items="${utilisateur}"   var="item">
-                                             <form:option value="${item.ID_U}">${item.nom} ${item.prenom} </form:option>
+                                     <form:option value="${item.ID_U}">${item.nom} ${item.prenom} </form:option>
                                 </c:forEach>
                             </form:select>
+                            <form:errors path="utilisateurList"  class="invalid-feedback"  cssStyle="color: red" />
 
                         </div>
 

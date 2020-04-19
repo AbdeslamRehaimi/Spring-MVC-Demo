@@ -13,19 +13,38 @@
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
     <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-</head>
-<body>
-<div class="container">
-     <div class="col-md-offset-1 col-md-10">
-        <fieldset>
-            <div style="text-align: center;">
-                <h1> <span style="color: #0000007a;">Spring MVC</span> DEMO </h1>
-            </div>
-            <hr>
-            <h1>${bnvnu} <em style="color: #1a909c">${nomcomplet} </em></h1>
-        </fieldset>
+    <style>
+        h1 {
+            color: #fff70a;
+        }
 
-        <h2>Lists of Utilisateur</h2>
+        h2 {
+            color: chocolate;
+        }
+        hr {
+            width: 150px;
+            border: 5px solid #48ff0c;
+        }
+        input{
+            border-radius: 50px;
+        }
+        h4{
+            color: aliceblue;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body style="background-color: #4a4747;">
+<div class="container">
+    <fieldset >
+        <div style="text-align: center;">
+            <h1> <span style="color: #ffffff;">SpringMVC</span> CONF XML </h1>
+        </div>
+        <div style="text-align: center;">
+        <h4>${bnvnu} <em style="color: #1a909c">${nomcomplet} </em></h4>
+        </div>
+    </fieldset>
+     <div class="col-md-offset-1 col-md-10">
         <hr />
 
         <input type="button" style="float: left;" value="Nouveau Utilisateur"
@@ -39,7 +58,7 @@
         <br/><br/>
         <div class="panel panel-info">
             <div class="panel-heading">
-                <div class="panel-title">Utilisateur List</div>
+                <div class="panel-title">Lists of Utilisateur</div>
             </div>
             <div class="panel-body">
                 <table class="table  table-dark table-striped table-bordered">
@@ -66,7 +85,7 @@
                             <td>${temp.ID_U}</td>
                             <td>${temp.nom}</td>
                             <td>${temp.prenom}</td>
-                            <td>${temp.coursList.ID_C.auteur.toString()}</td>
+                            <td>${temp.email}</td>
                             <td>${temp.identiter}</td>
                             <td>
                                 <c:choose>

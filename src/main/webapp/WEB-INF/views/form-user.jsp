@@ -14,23 +14,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/cards.css" />" rel="stylesheet">
     <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
-<body>
+<body style="background-color: #4a4747;">
 <div class="container">
-    <div >
-        <a style="float: left;" class="btn btn-danger" href="list" >Returne</a>
-    </div>
-    <br><br>
+
 
     <div class="row">
-        <div class="col-6 offset-3 ">
+        <div class="col-md-8 col-md-offset-2 ">
+            <div >
+                <a style="float: left;" class="btn btn-danger" href="list" >Returne</a>
+            </div>
+            <br><br>
             <div class="card">
-                <div class="panel-heading">
-                    <div class="panel-title">Nouveau/Modifier Utilisateur</div>
-                </div>
-                <form:form action="saveUser"  method="post" modelAttribute="user">
+                     <div class="card-header">Nouveau/Modifier Utilisateur</div>
+                 <form:form action="saveUser"  method="post" modelAttribute="user">
                     <div class="card-body row">
                         <form:hidden path="ID_U" />
                         <div class="form-group col-md-6 required ">
