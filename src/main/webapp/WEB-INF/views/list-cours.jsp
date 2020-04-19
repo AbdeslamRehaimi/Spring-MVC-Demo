@@ -86,7 +86,7 @@
                                 <td>${temp.module}</td>
                                 <td>
                                     <c:forEach var="user" items="${temp.utilisateurList}">
-                                        ${user.nom} ${user.prenom}
+                                        ${user.nom} ${user.prenom} <span style="color: red"><b>;</b></span>
                                     </c:forEach>
                                 </td>
                                 <td>${temp.auteur}</td>

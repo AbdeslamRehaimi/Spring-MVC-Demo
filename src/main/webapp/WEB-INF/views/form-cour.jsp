@@ -62,11 +62,10 @@
 
                         <div class="form-group col-sm-12 required ">
                             <label>Owner</label>
-                            <form:select path="utilisateurList" name="module" class="form-control"  >
-                                <c:forEach items="${utilisateur}"   var="item">
-                                     <form:option value="${item.ID_U}">${item.nom} ${item.prenom} </form:option>
-                                </c:forEach>
-                            </form:select>
+
+                            <form:select path="utilisateurList"  class="form-control"  >
+                                     <form:options items="${utilisateur}" id="ID_U" itemValue="ID_U"  itemLabel="email" />
+                             </form:select>
                             <form:errors path="utilisateurList"  class="invalid-feedback"  cssStyle="color: red" />
 
                         </div>

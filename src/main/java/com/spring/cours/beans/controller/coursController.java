@@ -59,6 +59,7 @@ public class coursController {
             theModel.addAttribute("utilisateur", utilisateurs);
             return "form-cour";
         }
+
         coursService.ajouteCoure(cours);
         return "redirect:/cours/list";
     }
@@ -69,6 +70,9 @@ public class coursController {
     public String updateUser(@RequestParam("ID_C") int id, Model model) {
         Cours cours = coursService.getCours(id);
         model.addAttribute("cour", cours);
+        //Cours cours = new Cours();
+        List<Utilisateur> utilisateurs = utilisateurService.getAllUtilisateur();
+        model.addAttribute("utilisateur", utilisateurs);
         return "form-cour";
     }
 
