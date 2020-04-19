@@ -18,37 +18,32 @@
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
 <body>
-<div style="text-align: center;"><h1 style="color: #1c7430">Not Implemented for the moment, just <a href="register" style="color: #007bff">Register an account</a></h1></div>
-<br><br><br>
 <div class="container">
     <div class="row">
+        <div class="col-md-12 col-sm-12">
         <div class="col-6 offset-3 ">
             <div class="card">
-                <div class="card-header">Login</div>
+                <div class="card-header">Votre Identifiant</div>
                 <form:form action="authentification"  method="post" modelAttribute="user">
                     <div class="card-body row">
-
-                        <div class="form-group col-sm-12 required ">
-                            <label>Email</label>
-                            <form:input path="email" type="email" name="email" placeholder="Email*" class="form-control"></form:input>
-                             <form:errors path="email"  class="invalid-feedback"  cssStyle="color: red" />
+                        <div class="form-group col-md-6 col-sm-12 required ">
+                            <label>Nom</label>
+                            <form:input path="nom" type="text" name="nom" placeholder="Nom*" class="form-control"></form:input>
+                            <form:errors path="nom"  class="invalid-feedback"  cssStyle="color: red" />
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12 required ">
+                            <label>Prenom</label>
+                            <form:input path="prenom" type="text" name="prenom" placeholder="Prenom*" class="form-control"></form:input>
+                            <form:errors path="prenom"  class="invalid-feedback"  cssStyle="color: red" />
                         </div>
 
-                        <div class="form-group col-md-12 required ">
-                            <label>Mot de pass</label>
-                            <form:input path="password" type="password" name="motdepasse" placeholder="Password**" class="form-control is-invalid"></form:input>
-                            <form:errors path="password"  class="invalid-feedback"  cssStyle="color: red" />
-                        </div>
                         <div class="form-group col-md-12">
-                            <!--<a class="btn btn-primary btn-block" href="index.html">Login</a>-->
-                            <form:button disabled="true" class="btn btn-primary btn-block">Submit</form:button>
+                            <form:button class="btn btn-primary btn-block">Submit</form:button>
                         </div>
                     </div>
                 </form:form>
-                <div class="text-center" style="text-align: center!important;">
-                    <a class="d-block small mt-3" href="register" >Register an Account</a>
-                </div>
             </div>
+        </div>
         </div>
     </div>
 </div>

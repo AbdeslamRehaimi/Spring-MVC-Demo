@@ -49,7 +49,7 @@ public class Cours implements Serializable{
     @JoinTable(name = "association", joinColumns = {
             @JoinColumn(name = "ID_C", referencedColumnName = "ID_C")}, inverseJoinColumns = {
             @JoinColumn(name = "ID_U", referencedColumnName = "ID_U")})
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Utilisateur> utilisateurList;
 
     public Cours() {

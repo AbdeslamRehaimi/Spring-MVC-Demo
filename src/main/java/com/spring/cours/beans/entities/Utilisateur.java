@@ -69,7 +69,7 @@ public class Utilisateur implements Serializable{
     @NotNull
     private String confirmpassword;
 
-    @ManyToMany(mappedBy = "utilisateurList")
+    @ManyToMany(mappedBy = "utilisateurList", fetch = FetchType.EAGER)
     private List<Cours> coursList;
 
 

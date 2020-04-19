@@ -7,106 +7,84 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="f" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Form|Cours</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
     <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-    <style>
-        .auto {
-            margin-left: auto !important;
-            margin-right: auto !important;
-            margin-top: 3rem !important;
-            position: relative;
-        }
-    </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="col-md-offset-1 col-md-10">
-        <div style="text-align: center;"><h2>Veuillez s'inscrire</h2></div>
-        <hr/>
-        <br/><br/>
-        <div class="panel panel-info auto" style="max-width: 50rem;">
-            <div class="panel-heading">
-                <div class="panel-title">Register</div>
-            </div>
-            <div class="panel-body">
-                <div class="card-body">
-                    <f:form cssClass="form-horizontal" method="post" modelAttribute="utilisateur">
-                        <f:hidden path="id_u" />
-                        <div class="form-group">
-                            <div class="form-label-group">
-                                <f:input type="text" id="nom" class="form-control" placeholder="Nom*"
-                                         required="required" autofocus="autofocus" path="nom"></f:input>
-                                <div class="col-md-3">
-                                    <f:errors path="nom" cssClass="alert alert-warning" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-label-group">
-                                <f:input type="text" class="form-control" placeholder="Prenom*"
-                                         required="required" path="prenom"></f:input>
-                                <div class="col-md-3">
-                                    <f:errors path="prenom" cssClass="alert alert-warning" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-label-group">
-                                <f:input type="text" id="identiter" class="form-control" placeholder="Identiter*"
-                                         required="required" path="identiter"></f:input>
-                                <div class="col-md-3">
-                                    <f:errors path="identiter" cssClass="alert alert-warning" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-label-group">
-                                <f:input type="email" id="email" class="form-control" placeholder="Email*"
-                                         required="required" autofocus="autofocus" path="email"></f:input>
-                                <div class="col-md-3">
-                                    <f:errors path="email" cssClass="alert alert-warning" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-label-group">
-                                <f:input type="password" id="password" class="form-control" placeholder="Password*"
-                                         required="required" path="password"></f:input>
-                                <div class="col-md-3">
-                                    <f:errors path="password" cssClass="alert alert-warning" />
-                                </div>
-                            </div>
-                        </div>
-                        <!--
-                        <div class="form-group">
-                        <div class="form-label-group">
-                        <input type="password" id="inputConfPassword" class="form-control" placeholder="Confirme Password*" >
-                        </div>
-                        </div>
-                        -->
+    <div >
+        <a style="float: left;" class="btn btn-danger" href="list" >Returne</a>
+    </div>
+    <br><br>
 
-                        <f:button cssClass="btn btn-primary">Submit</f:button>
-                    </f:form>
-                    <div class="text-center">
-                        <a class="d-block small mt-3" onclick="window.location.href='index.jsp'; return false;">Login
-                            Account
-                        </a>
-
-                        <!--Not implemented YET
-                        <a class="d-block small" onclick="window.location.href='reset.jsp'; return false;" >Forgot Password?</a>-->
-                    </div>
+    <div class="row">
+        <div class="col-6 offset-3 ">
+            <div class="card">
+                <div class="panel-heading">
+                    <div class="panel-title">Nouveau/Modifier Cours</div>
                 </div>
+                <form:form action="saveCour"  method="post" modelAttribute="cour">
+                    <div class="card-body row">
+                        <form:hidden path="ID_C" />
+                        <div class="form-group col-md-6 required ">
+                            <label>Titre</label>
+                            <form:input path="titre" type="text" name="nom" placeholder="Titre*" class="form-control "></form:input>
+                            <form:errors path="titre" class="invalid-feedback"  cssStyle="color: red" />
+                        </div>
+
+                        <div class="form-group col-md-6 required ">
+                            <label>Auteur</label>
+                            <form:input path="auteur" type="text" name="auteur" placeholder="Auteur*"  class="form-control"></form:input>
+                            <form:errors path="auteur"  class="invalid-feedback"  cssStyle="color: red"  />
+                        </div>
+
+
+                        <div class="form-group col-sm-12 required ">
+                            <label>Module</label>
+                            <form:select path="module" name="module" class="form-control"  >
+                                <form:option value="Unkown">------</form:option>
+                                <form:option value="JEE-Spring">JEE-Spring</form:option>
+                                <form:option value="Web">Web</form:option>
+                                <form:option value="Python">Python</form:option>
+                                <form:option value="Base De Donner">Base De Donner</form:option>
+                                <form:option value="Developement Mobile">Developement Mobile</form:option>
+                            </form:select>
+                            <form:errors path="module"  class="invalid-feedback"  cssStyle="color: red" />
+                        </div>
+
+
+                        <div class="form-group col-sm-12 required ">
+                            <label>Owner</label>
+                            <form:select path="utilisateurList" name="module" class="form-control"  >
+                                <c:forEach items="${utilisateur}"   var="item">
+                                             <form:option value="${item.ID_U}">${item.nom} ${item.prenom} </form:option>
+                                </c:forEach>
+                            </form:select>
+
+                        </div>
+
+
+                        <div class="form-group col-sm-12 required text-danger">
+                            <label>Image</label>
+                            <form:input path="image" type="text" name="text" placeholder="Path image" class="form-control is-invalid"></form:input>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <form:button class="btn btn-success btn-block">Valider</form:button>
+                        </div>
+                    </div>
+                </form:form>
             </div>
         </div>
     </div>
-
 </div>
-
 </body>
 </html>
