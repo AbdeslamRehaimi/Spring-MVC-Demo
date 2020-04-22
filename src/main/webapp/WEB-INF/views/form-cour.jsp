@@ -48,7 +48,7 @@
 
                         <div class="form-group col-sm-12 required ">
                             <label>Module</label>
-                            <form:select path="module" name="module" class="form-control"  >
+                            <form:select path="module" name="module" class="form-control is-invalid"  >
                                 <form:option value="Unkown">------</form:option>
                                 <form:option value="JEE-Spring">JEE-Spring</form:option>
                                 <form:option value="Web">Web</form:option>
@@ -63,7 +63,7 @@
                         <div class="form-group col-sm-12 required ">
                             <label>Owner</label>
 
-                            <form:select path="utilisateurList"  class="form-control"  >
+                            <form:select path="utilisateurList"  class="form-control is-invalid"  >
                                      <form:options items="${utilisateur}" id="ID_U" itemValue="ID_U"  itemLabel="email" />
                              </form:select>
                             <form:errors path="utilisateurList"  class="invalid-feedback"  cssStyle="color: red" />
